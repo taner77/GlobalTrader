@@ -59,6 +59,8 @@ public  class Driver {
             driver=null;  //driver'in null oldugundan emin olmak icin null atiyoruz
             // boylelikle driver'i tekrar baslatabiliriz
             // Multi Browser test yaparken bu onemli olacak
+
+            driver.close();
         }
     }
 }
