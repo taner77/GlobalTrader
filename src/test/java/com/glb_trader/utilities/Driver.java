@@ -16,7 +16,7 @@ public  class Driver {
     //Ihtiyacimiz oldugunda driver'i kurmak ve baslatmak icin kullaniriz
     // Driver null oldugunda create edip baslatacagiz (if driver==null)
     //Driver class 'i farkli browserlar ile de kullanacacgimiz sekilde olusturacagiz!!!
-
+    //Driver class 'i farkli browserlar ile de kullanacacgimiz sekilde olusturacagiz!!!
     private Driver(){
         // Baska obje olusturulmasini istemedigimiz icin creta ediyoruz
     }
