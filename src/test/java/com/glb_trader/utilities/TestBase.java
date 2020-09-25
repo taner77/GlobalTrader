@@ -24,6 +24,7 @@ public class TestBase {
         extentReports = new ExtentReports();//1. create object to set the location of the report
         String filePath = System.getProperty("user.dir") + "/test-output/myprojectreport.html";//create a custom report in the current project.
         //Folder name = test-output, File name = report.html
+        //Folder name = test-output, File name = report.html
         //String filePath = System.getProperty("user.dir") + "\\test-output\\report.html";//THIS IS FOR WINDOWS USER
         extentHtmlReporter = new ExtentHtmlReporter(filePath);//2. creating the report with the path we created
         extentReports.attachReporter(extentHtmlReporter);//3. attaching the html report to our custom report
