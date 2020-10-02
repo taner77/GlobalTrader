@@ -16,8 +16,10 @@ public class Driver {
     //Driver null oldugunda create edip baslatacagiz.(if driver==null)
     //Driver classi farkli browserlar(tarayici) ile de kullanacagimiz sekilde olusturacagiz.
 
-    private Driver(){  // parametresiz bir driver constructor olusturduk ki baska bir sebeple kullanilmasin!!!
+
+    private Driver() {  // parametresiz bir driver constructor olusturduk ki baska bir sebeple kullanilmasin!!!
         // Baska obje olusturulmasini istemedigimiz icin create ediyoruz.
+
     }
 
     //driver instance olusturalim
@@ -25,7 +27,7 @@ public class Driver {
     //driver'i baslatmak icin statik bir method olusturalim
     public static WebDriver getDriver(){
         if(driver==null){  //  driver null olmasi kosuluyla calisacak.
-            switch (ConfigurationReader.getProperty("browser")){
+            switch (ConfigReader.getProperty("browser")){
                 case "chrome":
                     WebDriverManager.chromedriver().setup();
                     driver = new ChromeDriver();
@@ -53,6 +55,7 @@ public class Driver {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         return driver;
     }
+
     public static void closedDriver(){
         if(driver!=null){  //Eger driver chrome'u isaret ediyorsa
             driver.quit();   // driver'i kapat!

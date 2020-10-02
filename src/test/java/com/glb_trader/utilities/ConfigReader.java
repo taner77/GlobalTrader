@@ -3,7 +3,7 @@ package com.glb_trader.utilities;
 import java.io.FileInputStream;
 import java.util.Properties;
 
-public class ConfigurationReader {
+public class ConfigReader {
 
     //Bu class in amaci, configuration.properties dosyasindaki
     //verileri (test data ) okumaktir
@@ -30,7 +30,9 @@ public class ConfigurationReader {
     }
     //Okumak icin static bir metod olusturalim.
     //Bu metod kullanici anahtar kelimeyi girdiginde(key) , value return eder.
+
     public static String getProperty(String key){
+
         return properties.getProperty(key);
     }
 
