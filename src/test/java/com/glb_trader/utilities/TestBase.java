@@ -12,7 +12,6 @@ import org.testng.annotations.BeforeTest;
 
 import java.io.IOException;
 
-import java.sql.Driver;
 import java.util.concurrent.TimeUnit;
 
 public class TestBase {
@@ -41,7 +40,7 @@ public class TestBase {
         driver = Driver.getDriver();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.manage().window().maximize();
-        driver.get(ConfigurationReader.getProperty("fhc_login_url"));
+        driver.get(ConfigurationReader.getProperty("glb_trader_url"));
     }
     @AfterMethod(alwaysRun = true)//In AfterMethod, we are getting the screenshots and attaching the report when test fails
     public void tearDownMethod(ITestResult result) throws IOException {
@@ -53,7 +52,7 @@ public class TestBase {
         } else if (result.getStatus() == ITestResult.SKIP) {
             extentTest.skip("Test Case is skipped: " + result.getName());
         }
-        Driver.closeDriver();
+       // Driver.closeDriver();
     }
     @AfterTest(alwaysRun = true)
     public void tearDownTest() {
