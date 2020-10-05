@@ -7,10 +7,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class GR1_US022_Page {
+public class GR1_Page {
 
     WebDriver driver;
-    public GR1_US022_Page(WebDriver driver){
+    public GR1_Page(WebDriver driver){
         PageFactory.initElements(driver,this);
     }
     @FindBy(id = "email")

@@ -1,18 +1,17 @@
 package com.glb_trader.tests;
 
-import com.glb_trader.pages.GR1_US022_Page;
+import com.glb_trader.pages.GR1_Page;
 import com.glb_trader.utilities.TestBase;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import org.testng.asserts.SoftAssert;
 
-public class GR_US022_Test extends TestBase {
+public class GR1_Test extends TestBase {
 
     @Test
     public void UserStory01() {
 
-        GR1_US022_Page us022_page = new GR1_US022_Page(driver);
+        GR1_Page us022_page = new GR1_Page(driver);
         driver.get("https://www.glbtrader.com/login.html");
         us022_page.mail_address.sendKeys("qatesteradayi@gmail.com");
         us022_page.password.sendKeys("1");
