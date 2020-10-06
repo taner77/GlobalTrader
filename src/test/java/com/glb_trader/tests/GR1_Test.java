@@ -5,12 +5,13 @@ import com.glb_trader.utilities.TestBase;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 
 public class GR1_Test extends TestBase {
 
     @Test
     public void UserStory01() {
-
+        //SoftAssert softAssert = new SoftAssert();
         GR1_Page us022_page = new GR1_Page(driver);
         driver.get("https://www.glbtrader.com/login.html");
         us022_page.mail_address.sendKeys("qatesteradayi@gmail.com");
@@ -38,20 +39,54 @@ public class GR1_Test extends TestBase {
         us022_page.address.sendKeys("Times Square");
         us022_page.updateButton.click();
         Assert.assertTrue(us022_page.memberIcon.getText().contains("wiseteam01"));
+        //softAssert.assertTrue(us022_page.memberIcon.getText().equals("wiseteam01"));
         us022_page.editButtonProfile.click();
         us022_page.name.clear();
         us022_page.updateButton.click();
         Assert.assertTrue(us022_page.nameAlert.getText().contains("Please Enter the Name."));
+        //softAssert.assertTrue(us022_page.nameAlert.getText().equals("Please Enter the Name."));
         us022_page.changePassword.click();
         us022_page.old_pass.sendKeys("1");
         us022_page.new_pass.sendKeys("1");
         us022_page.con_pass.sendKeys("1");
         us022_page.submit.click();
         Assert.assertTrue(us022_page.succesMessage.getText().contains("Password changed successfully"));
+        //softAssert.assertTrue(us022_page.succesMessage.getText().equals("Password changed successfully"));
+        //softAssert.assertAll();
+        us022_page.old_pass.clear();
+        us022_page.new_pass.sendKeys("1");
+        us022_page.con_pass.sendKeys("1");
+        us022_page.submit.click();
+        Assert.assertTrue(us022_page.old_pass_message.getText().equals("Please Enter Old Password."));
+        //softAssert.assertTrue(us022_page.old_pass_message.getText().equals("Please Enter Old Password."));
+        //softAssert.assertAll();
+        us022_page.old_pass.sendKeys("5");
+        us022_page.new_pass.sendKeys("1");
+        us022_page.con_pass.sendKeys("1");
+        us022_page.submit.click();
+        Assert.assertTrue(us022_page.old_pass_wrong_message.getText().equals("Wrong Password"));
 
+        us022_page.old_pass.clear();
+        us022_page.old_pass.sendKeys("1");
+        us022_page.new_pass.clear();
+        us022_page.con_pass.clear();
+        us022_page.submit.click();
+        Assert.assertTrue(us022_page.alert_re_password.getText().equals("Please enter Confirm Password."));
 
+        us022_page.old_pass.clear();
+        us022_page.old_pass.sendKeys("1");
+        us022_page.new_pass.clear();
+        us022_page.con_pass.sendKeys("1");
+        us022_page.submit.click();
+        Assert.assertTrue(us022_page.alert_new_password.getText().equals("Please Enter New Password."));
 
-
+        us022_page.old_pass.clear();
+        us022_page.new_pass.clear();
+        us022_page.con_pass.clear();
+        us022_page.submit.click();
+        Assert.assertTrue(us022_page.old_pass_message.getText().equals("Please Enter Old Password."));
+        Assert.assertTrue(us022_page.alert_re_password.getText().equals("Please enter Confirm Password."));
+        Assert.assertTrue(us022_page.alert_new_password.getText().equals("Please Enter New Password."));
 
     }
 }
