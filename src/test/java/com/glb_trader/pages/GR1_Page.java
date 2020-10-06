@@ -75,6 +75,17 @@ public class GR1_Page {
     public WebElement alert_re_password;
     @FindBy(id = "alert_new_password")
     public WebElement alert_new_password;
+    @FindBy(xpath = "//*[@id=\"main_category\"]/ul/li[4]/a")
+    public WebElement wishlist;
+    @FindBy(xpath = "//*[@id=\"dataTables-example\"]/tbody/tr[1]/td[2]/a")
+    public WebElement wishListBox;
+    @FindBy(xpath = "(//input[@class='btn btn-sm btn-primary'])[1]")
+    public WebElement nextButton;
+    @FindBy(xpath = "(//input[@class='btn btn-sm btn-primary'])[2]")
+    public WebElement prevButton;
+    @FindBy(xpath = "(//td[@width='10%'])[1]")
+    public WebElement removeButton;
+
 
 
 
