@@ -87,13 +87,4 @@ public class GR1_Page {
     public WebElement removeButton;
 
 
-
-
-
-
-
-
-
-
-
 }
