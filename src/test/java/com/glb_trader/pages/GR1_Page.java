@@ -67,6 +67,14 @@ public class GR1_Page {
     public WebElement submit;
     @FindBy(xpath = "//div[@class='alert alert-success']")
     public WebElement succesMessage;
+    @FindBy(xpath = "//span[@class='alert']")
+    public WebElement old_pass_message;
+    @FindBy(id = "alert_old_password")
+    public WebElement old_pass_wrong_message;
+    @FindBy(id = "alert_re_password")
+    public WebElement alert_re_password;
+    @FindBy(id = "alert_new_password")
+    public WebElement alert_new_password;
 
 
 
