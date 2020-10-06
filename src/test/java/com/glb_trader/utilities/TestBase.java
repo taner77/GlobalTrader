@@ -3,7 +3,9 @@ package com.glb_trader.utilities;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
@@ -35,6 +37,9 @@ public class TestBase {
         extentHtmlReporter.config().setDocumentTitle("FHC Trip Reports");
         extentHtmlReporter.config().setReportName("FHC Trip Automation Reports");
     }
+
+
+
     @BeforeMethod(alwaysRun = true)
     public void setupMethod() {
         driver = Driver.getDriver();
@@ -58,4 +63,5 @@ public class TestBase {
     public void tearDownTest() {
         extentReports.flush();
     }
+
 }
