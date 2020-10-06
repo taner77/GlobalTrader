@@ -5,9 +5,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class GLBTRADER_HomePage {
+public class GR3_CSellerRegPage {
 
-    public GLBTRADER_HomePage (){
+    public GR3_CSellerRegPage(){
 
         PageFactory.initElements(Driver.getDriver(),this);
     }
