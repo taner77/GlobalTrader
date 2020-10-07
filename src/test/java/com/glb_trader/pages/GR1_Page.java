@@ -1,7 +1,6 @@
 package com.glb_trader.pages;
 
-import org.apache.xmlbeans.impl.xb.xsdschema.FieldDocument;
-import org.openqa.selenium.By;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -85,6 +84,8 @@ public class GR1_Page {
     public WebElement prevButton;
     @FindBy(xpath = "(//td[@width='10%'])[1]")
     public WebElement removeButton;
+
+
 
 
 }

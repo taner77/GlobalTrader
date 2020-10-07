@@ -69,7 +69,6 @@ public class GR1_Test extends TestBase {
         Assert.assertTrue(us022_page.old_pass_message.getText().equals("Please Enter Old Password."));
         //softAssert.assertTrue(us022_page.old_pass_message.getText().equals("Please Enter Old Password."));
         //softAssert.assertAll();
-
         us022_page.old_pass.sendKeys("5");
         us022_page.new_pass.sendKeys("1");
         us022_page.con_pass.sendKeys("1");
