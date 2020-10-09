@@ -33,7 +33,7 @@ public class GR6_Test extends TestBase {
         Actions action = new Actions(driver);
         action.sendKeys(Keys.PAGE_DOWN).perform();
         gr6_page.addToCarddButton.click();
-        String text = gr6_page.uniqueId.getText();
+        //String text = gr6_page.uniqueId.getText();
         // Assert.assertTrue(text.contains("1131"));is this bug?
         driver.navigate().back();
         gr6_page.contacSeller.click();
