@@ -3,7 +3,9 @@ package com.glb_trader.utilities;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
@@ -24,6 +26,7 @@ public class TestBase {
         extentReports = new ExtentReports();//1. create object to set the location of the report
         String filePath = System.getProperty("user.dir") + "/test-output/myprojectreport.html";//create a custom report in the current project.
         //Folder name = test-output, File name = report.html
+        //Folder name = test-output, File name = report.html
         //String filePath = System.getProperty("user.dir") + "\\test-output\\report.html";//THIS IS FOR WINDOWS USER
         extentHtmlReporter = new ExtentHtmlReporter(filePath);//2. creating the report with the path we created
         extentReports.attachReporter(extentHtmlReporter);//3. attaching the html report to our custom report
@@ -34,12 +37,15 @@ public class TestBase {
         extentHtmlReporter.config().setDocumentTitle("FHC Trip Reports");
         extentHtmlReporter.config().setReportName("FHC Trip Automation Reports");
     }
+
+
+
     @BeforeMethod(alwaysRun = true)
     public void setupMethod() {
         driver = Driver.getDriver();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.manage().window().maximize();
-        driver.get(ConfigurationReader.getProperty("fhc_login_url"));
+        driver.get(ConfigurationReader.getProperty("glb_trader_url"));
     }
     @AfterMethod(alwaysRun = true)//In AfterMethod, we are getting the screenshots and attaching the report when test fails
     public void tearDownMethod(ITestResult result) throws IOException {
@@ -51,10 +57,11 @@ public class TestBase {
         } else if (result.getStatus() == ITestResult.SKIP) {
             extentTest.skip("Test Case is skipped: " + result.getName());
         }
-        Driver.closeDriver();
+       // Driver.closeDriver();
     }
     @AfterTest(alwaysRun = true)
     public void tearDownTest() {
         extentReports.flush();
     }
+
 }
