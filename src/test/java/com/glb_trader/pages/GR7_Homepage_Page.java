@@ -7,14 +7,33 @@ import org.openqa.selenium.support.PageFactory;
 
 public class GR7_Homepage_Page {
 
-    public GR7_Homepage_Page(){
-        PageFactory.initElements(Driver.getDriver(),this);
-    }
-
+public GR7_Homepage_Page(){PageFactory.initElements(driver,this);}
     @FindBy(linkText = "How Can I list my products?")
     public WebElement listmyproduct1;
 
     @FindBy(linkText = "How Can I list my products in Glbtrader.com?")
     public WebElement listmyproduct2;
+    @FindBy(linkText = "How Can I list my products?")
+    public WebElement listmyproduct1;
+
+    @FindBy(linkText = "How Can I list my products in Glbtrader.com?")
+    public WebElement listmyproduct2;
+    @FindBy(linkText = "How Can I list my products?")
+    public WebElement listmyproduct1;
+
+    @FindBy(linkText = "How Can I list my products in Glbtrader.com?")
+    public WebElement listmyproduct2;
+    @FindBy(linkText = "How Can I list my products?")
+    public WebElement listmyproduct1;
+
+    @FindBy(linkText = "How Can I list my products in Glbtrader.com?")
+    public WebElement listmyproduct2;
+    @FindBy(linkText = "How Can I list my products?")
+    public WebElement listmyproduct1;
+
+    @FindBy(linkText = "How Can I list my products in Glbtrader.com?")
+    public WebElement listmyproduct2;
+
+
 
 }
