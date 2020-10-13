@@ -9,9 +9,11 @@ import org.openqa.selenium.support.PageFactory;
 public class GR1_Page {
 
     WebDriver driver;
+
     public GR1_Page(WebDriver driver){
         PageFactory.initElements(driver,this);
     }
+
     @FindBy(id = "email")
     public WebElement mail_address;
     @FindBy(id = "password")
