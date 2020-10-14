@@ -6,6 +6,7 @@ import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
@@ -21,6 +22,7 @@ public class TestBase {
     protected static ExtentReports extentReports;
     protected static ExtentTest extentTest;
     protected static ExtentHtmlReporter extentHtmlReporter;
+    protected WebDriverWait wait;
     @BeforeTest(alwaysRun = true)
     public void setUpTest() {//This is how to set up Extent report. We will create and use this one in out test classes
         extentReports = new ExtentReports();//1. create object to set the location of the report
@@ -46,6 +48,7 @@ public class TestBase {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.manage().window().maximize();
         driver.get(ConfigurationReader.getProperty("glb_trader_url"));
+        wait = new WebDriverWait(Driver.getDriver(),20);
     }
     @AfterMethod(alwaysRun = true)//In AfterMethod, we are getting the screenshots and attaching the report when test fails
     public void tearDownMethod(ITestResult result) throws IOException {
