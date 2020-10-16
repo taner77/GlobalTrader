@@ -3,7 +3,9 @@ package com.glb_trader.utilities;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
@@ -12,7 +14,6 @@ import org.testng.annotations.BeforeTest;
 
 import java.io.IOException;
 
-import java.sql.Driver;
 import java.util.concurrent.TimeUnit;
 
 public class TestBase {
@@ -36,12 +37,15 @@ public class TestBase {
         extentHtmlReporter.config().setDocumentTitle("FHC Trip Reports");
         extentHtmlReporter.config().setReportName("FHC Trip Automation Reports");
     }
+
+
+
     @BeforeMethod(alwaysRun = true)
     public void setupMethod() {
         driver = Driver.getDriver();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.manage().window().maximize();
-        driver.get(ConfigurationReader.getProperty("fhc_login_url"));
+        driver.get(ConfigurationReader.getProperty("glb_trader_url"));
     }
     @AfterMethod(alwaysRun = true)//In AfterMethod, we are getting the screenshots and attaching the report when test fails
     public void tearDownMethod(ITestResult result) throws IOException {
@@ -53,10 +57,11 @@ public class TestBase {
         } else if (result.getStatus() == ITestResult.SKIP) {
             extentTest.skip("Test Case is skipped: " + result.getName());
         }
-        Driver.closeDriver();
+       // Driver.closeDriver();
     }
     @AfterTest(alwaysRun = true)
     public void tearDownTest() {
         extentReports.flush();
     }
+
 }
