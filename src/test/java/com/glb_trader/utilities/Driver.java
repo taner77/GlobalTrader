@@ -1,6 +1,6 @@
 package com.glb_trader.utilities;
 
-import com.glb_trader.tests.Example;
+
 import com.glb_trader.tests.GR1_Test;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
